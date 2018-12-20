@@ -1,0 +1,43 @@
+{
+  "name": "h5p-editor-audio-recorder",
+  "version": "1.0.0",
+  "description": "Record and upload audio directly in the H5P Editor",
+  "scripts": {
+    "build": "cross-env NODE_ENV='production' webpack -p",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h5p/h5p-editor-audio-recorder.git"
+  },
+  "author": "Joubel",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "browser-env": "^2.0.30",
+    "cross-env": "^4.0.0",
+    "css-loader": "^0.26.2",
+    "extract-text-webpack-plugin": "^2.0.0",
+    "node-sass": "^4.11.0",
+    "raw-loader": "^0.5.1",
+    "require-extension-hooks": "^0.2.0",
+    "require-extension-hooks-babel": "^0.1.0",
+    "require-extension-hooks-vue": "^0.2.1",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.13.2",
+    "timer-machine": "^1.1.0",
+    "url-loader": "^0.5.8",
+    "vue-loader": "^11.2.0",
+    "vue-template-compiler": "^2.5.21",
+    "webpack": "^2.7.0"
+  },
+  "dependencies": {
+    "vue": "^2.5.21"
+  }
+}
