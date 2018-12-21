@@ -147,10 +147,10 @@
       top: 50%;
       transform: translate(-50%,-50%);
       position: absolute;
-      font-size: 2.5em;
+      font-size: 2em;
       border-radius: 50%;
       background-color: white;
-      line-height: 1.25;
+      line-height: 1.6;
     }
 
     .h5p-audio-recorder-player {

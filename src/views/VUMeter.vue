@@ -72,6 +72,9 @@
     background-image: url('../images/recording-indicator.svg');
     position: absolute;
     transform: scale(0.8);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    outline: transparent solid 1px;
 
     &.hidden {
       display: none;

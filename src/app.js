@@ -69,14 +69,23 @@ export default class {
 
     let media;
     this.getMedia = function () {
-      // Reset
+      return media;
+    };
+    this.hasMedia = function () {
+      return !!media;
+    };
+    this.reset = function () {
       viewModel.state = State.READY;
-      if(viewModel.$refs.timer) {
+      if (viewModel.$refs.timer) {
         viewModel.$refs.timer.reset();
       }
       viewModel.$emit('retry');
-
-      return media;
+    };
+    this.pause = function () {
+      if (viewModel.state === 'recording') {
+        viewModel.state = State.PAUSED;
+        viewModel.$emit('paused');
+      }
     };
 
     // Start recording when record button is pressed
@@ -94,11 +103,9 @@ export default class {
           name: 'audio-recorder.' + blob.type.split('/')[1]
         };
 
-
         viewModel.audioSrc = URL.createObjectURL(blob);
-        //        viewModel.audioFilename = 'i-used-the-h5peditor-to-record-audio.wav';
 
-
+        this.trigger('hasMedia', true);
       }).catch(e => {
         viewModel.state = State.CANT_CREATE_AUDIO_FILE;
         console.error(H5PEditor.t('H5PEditor.AudioRecorder', 'statusCantCreateTheAudioFile'), e);
@@ -107,6 +114,7 @@ export default class {
 
     viewModel.$on('retry', () => {
       viewModel.audioSrc = AUDIO_SRC_NOT_SPECIFIED;
+      this.trigger('hasMedia', false);
     });
 
     viewModel.$on('paused', () => {
@@ -161,30 +169,5 @@ export default class {
       container.appendChild(rootElement);
       viewModel.$mount(rootElement);
     };
-  }
-}
-
-H5PEditor.language['H5PEditor.AudioRecorder'] = {
-  "libraryStrings":{
-    "title":"Lydopptaker",
-    "recordAnswer":"Ta opp",
-    "pause":"Pause",
-    "continue":"Fortsett",
-    "download":"Last ned",
-    "done":"Ferdig",
-    "retry":"Prøv igjen",
-    "microphoneNotSupported":"Mikrofon støttes ikke. Pass på at du bruker en nettleser som tillater mikrofoninnspilling.",
-    "microphoneInaccessible":"Mikrofonen er ikke tilgjengelig. Kontroller at nettlesermikrofonen er aktivert.",
-    "insecureNotAllowed":"Tilgang til mikrofon er ikke tillatt i nettleseren din siden denne siden ikke vises ved hjelp av HTTPS. Ta kontakt med forfatteren, og be ham om å gjøre dette tilgjengelig ved hjelp av HTTPS",
-    "statusReadyToRecord":"Trykk på en knapp under for å ta opp svaret ditt.",
-    "statusRecording":"Tar opp...",
-    "statusPaused":"Opptak pauset. Trykk på en knapp for å fortsette opptaket.",
-    "statusFinishedRecording":"Du har registrert ditt svar! Lytt til opptaket nedenfor.",
-    "downloadRecording":"Last ned dette opptaket eller prøv på nytt.",
-    "retryDialogHeaderText":"Prøv på nytt?",
-    "retryDialogBodyText":"Ved å trykke på \"Prøv igjen\" vil du miste din nåværende innspilling.",
-    "retryDialogConfirmText":"Prøv igjen",
-    "retryDialogCancelText":"Avbryt",
-    "statusCantCreateTheAudioFile":"Kan ikke opprette lydfilen."
   }
 }
