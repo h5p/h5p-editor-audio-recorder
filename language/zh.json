@@ -10,7 +10,7 @@
     "microphoneInaccessible":"麥克風無法存取，請檢查瀏覽器上是否啟用麥克風。",
     "insecureNotAllowed":"瀏覽器不允許存取麥克風裝置，因為這個頁面未使用 HTTPS。請聯絡該網頁的管理者，請他改用 HTTPS",
     "statusReadyToRecord":"點擊下方按鈕開始錄製。",
-    "statusRecording":正在錄音…",
+    "statusRecording":"正在錄音…",
     "statusPaused":"已暫停錄音",
     "statusFinishedRecording":"聽聽下面的錄音。",
     "downloadRecording":"點擊「插入」以使用這段錄音。",
