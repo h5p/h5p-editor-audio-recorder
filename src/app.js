@@ -113,6 +113,7 @@ export default class {
     });
 
     viewModel.$on('retry', () => {
+      recorder.releaseMic();
       viewModel.audioSrc = AUDIO_SRC_NOT_SPECIFIED;
       this.trigger('hasMedia', false);
     });

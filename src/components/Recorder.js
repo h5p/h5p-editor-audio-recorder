@@ -239,6 +239,10 @@ export default class Recorder extends H5P.EventDispatcher {
    * Release the MIC
    */
   releaseMic() {
+    if (this.audioContext.state === 'closed') {
+      return; // Prevent exception since this is called without regard for the current state
+    }
+
     this._setState(RecorderState.inactive);
     // Clear the buffers:
     this.worker.postMessage({
