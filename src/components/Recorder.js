@@ -239,7 +239,7 @@ export default class Recorder extends H5P.EventDispatcher {
    * Release the MIC
    */
   releaseMic() {
-    if (this.audioContext.state === 'closed') {
+    if (!this.audioContext || this.audioContext.state === 'closed') {
       return; // Prevent exception since this is called without regard for the current state
     }
 
