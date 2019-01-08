@@ -75,14 +75,16 @@ export default class {
       return !!media;
     };
     this.reset = function () {
-      viewModel.state = State.READY;
-      if (viewModel.$refs.timer) {
-        viewModel.$refs.timer.reset();
+      if (recorder.supported()) {
+        viewModel.state = State.READY;
+        if (viewModel.$refs.timer) {
+          viewModel.$refs.timer.reset();
+        }
+        viewModel.$emit('retry');
       }
-      viewModel.$emit('retry');
     };
     this.pause = function () {
-      if (viewModel.state === 'recording') {
+      if (recorder.supported() && viewModel.state === 'recording') {
         viewModel.state = State.PAUSED;
         viewModel.$emit('paused');
       }
