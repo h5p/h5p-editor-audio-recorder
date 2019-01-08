@@ -7,4 +7,4 @@ Record and upload audio directly in the H5P Editor.
 
 Copyright (c) 2018 Joubel AS
 
-[The MIT License](LICENCE.md)
+[The MIT License](LICENSE.md)
