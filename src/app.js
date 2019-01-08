@@ -118,6 +118,7 @@ export default class {
       recorder.releaseMic();
       viewModel.audioSrc = AUDIO_SRC_NOT_SPECIFIED;
       this.trigger('hasMedia', false);
+      media = undefined;
     });
 
     viewModel.$on('paused', () => {
