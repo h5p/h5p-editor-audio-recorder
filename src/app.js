@@ -75,14 +75,16 @@ export default class {
       return !!media;
     };
     this.reset = function () {
-      viewModel.state = State.READY;
-      if (viewModel.$refs.timer) {
-        viewModel.$refs.timer.reset();
+      if (recorder.supported()) {
+        viewModel.state = State.READY;
+        if (viewModel.$refs.timer) {
+          viewModel.$refs.timer.reset();
+        }
+        viewModel.$emit('retry');
       }
-      viewModel.$emit('retry');
     };
     this.pause = function () {
-      if (viewModel.state === 'recording') {
+      if (recorder.supported() && viewModel.state === 'recording') {
         viewModel.state = State.PAUSED;
         viewModel.$emit('paused');
       }
@@ -116,6 +118,7 @@ export default class {
       recorder.releaseMic();
       viewModel.audioSrc = AUDIO_SRC_NOT_SPECIFIED;
       this.trigger('hasMedia', false);
+      media = undefined;
     });
 
     viewModel.$on('paused', () => {
