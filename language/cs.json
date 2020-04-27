@@ -15,7 +15,7 @@
     "statusFinishedRecording":"Poslechněte si níže uvedený záznam.",
     "downloadRecording":"Chcete-li použít tento záznam, stiskněte tlačítko  \"Vložit\" .",
     "retryDialogHeaderText":"Opakovat nahrávání?",
-    "retryDialogBodyText":"Stisknutím \ "Opakovat \" ztratíte aktuální nahrávku.",
+    "retryDialogBodyText":"Stisknutím \"Opakovat\" ztratíte aktuální nahrávku.",
     "retryDialogConfirmText":"Opakovat",
     "retryDialogCancelText":"CancZrušitel",
     "statusCantCreateTheAudioFile":"Zvukový soubor nelze vytvořit."
