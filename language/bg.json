@@ -1,0 +1,23 @@
+{
+  "libraryStrings": {
+    "title": "Аудиозапис",
+    "recordAnswer": "Запис",
+    "pause": "Пауза",
+    "continue": "Продължи",
+    "done": "Край",
+    "retry": "Нулирай",
+    "microphoneNotSupported": "Microphone not supported. Make sure you are using a browser that allows microphone recording.",
+    "microphoneInaccessible": "Microphone is not accessible. Make sure that the browser microphone is enabled.",
+    "insecureNotAllowed": "Access to microphone is not allowed in your browser since this page is not served using HTTPS. Please contact the author, and ask him to make this available using HTTPS",
+    "statusReadyToRecord": "Натисни бутона по долу, за да стартираш записването.",
+    "statusRecording": "Записване...",
+    "statusPaused": "Записването е на пауза.",
+    "statusFinishedRecording": "Listen to the recording below.",
+    "downloadRecording": "Press the button labelled \"Insert\" to use this recording.",
+    "retryDialogHeaderText": "Желаеш ли отново да записваш?",
+    "retryDialogBodyText": "При натискане на \"Опитай пак\" ще загубиш настоящия запис.",
+    "retryDialogConfirmText": "Опитай пак",
+    "retryDialogCancelText": "Отмени",
+    "statusCantCreateTheAudioFile": "Не мога да създам аудио файл."
+  }
+}
