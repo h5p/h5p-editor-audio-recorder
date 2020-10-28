@@ -6,7 +6,7 @@
     "continue":"Doorgaan",
     "done":"Voltooid",
     "retry":"Opnieuw instellen",
-    "microphoneNotSupported":"Microfoon niet ondersteund. Maak gebruik van een browser die opname van de microfoon toestaat.",
+    "microphoneNotSupported":"Microfoon wordt niet ondersteund. Maak gebruik van een browser die opname van de microfoon toestaat.",
     "microphoneInaccessible":"Kan geen toegang krijgen tot microfoon. Zorg ervoor dat de microfoon (in je browser) is ingeschakeld.",
     "insecureNotAllowed":"Toegang tot microfoon is niet toegestaan in je browser omdat deze pagina niet via HTTPS geladen is. Neem contact op met de auteur, en vraag hem HTTPS beschikbaar te maken",
     "statusReadyToRecord":"Klik de knop hieronder om de opname te starten.",
