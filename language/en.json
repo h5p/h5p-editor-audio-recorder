@@ -15,7 +15,7 @@
     "statusFinishedRecording":"Listen to the recording below.",
     "downloadRecording":"Press the button labelled \"Insert\" to use this recording.",
     "retryDialogHeaderText":"Retry recording?",
-    "retryDialogBodyText":"By pressing \"Retry\" you will loose your current recording.",
+    "retryDialogBodyText":"By pressing \"Retry\" you will lose your current recording.",
     "retryDialogConfirmText":"Retry",
     "retryDialogCancelText":"Cancel",
     "statusCantCreateTheAudioFile":"Can't create the audio file."
