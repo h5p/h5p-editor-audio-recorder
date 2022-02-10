@@ -24,7 +24,7 @@
     "cross-env": "^4.0.0",
     "css-loader": "^0.26.2",
     "extract-text-webpack-plugin": "^2.0.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "raw-loader": "^0.5.1",
     "require-extension-hooks": "^0.2.0",
     "require-extension-hooks-babel": "^0.1.0",
