@@ -126,7 +126,7 @@
 </script>
 
 <style lang="scss" type="text/scss">
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+  @import '../styles/font-open-sans.scss';
 
   $screen-small: 576px;
   $record-button-width: 8.2em;
