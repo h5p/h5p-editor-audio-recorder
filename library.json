@@ -19,7 +19,7 @@
   ],
   "preloadedCss": [
     {
-      "path": "src/styles/font-open-sans.css"
+      "path": "styles/font-open-sans.css"
     }
   ],
   "preloadedDependencies": [
