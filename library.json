@@ -17,11 +17,6 @@
       "path": "dist/h5p-editor-audio-recorder.js"
     }
   ],
-  "preloadedCss": [
-    {
-      "path": "styles/font-open-sans.css"
-    }
-  ],
   "preloadedDependencies": [
     {
       "machineName": "FontAwesome",
