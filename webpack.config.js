@@ -15,7 +15,7 @@ const config = {
     sourceMapFilename: '[file].map'
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js', '.vue' ],
+    extensions: ['.tsx', '.ts', '.js', '.vue'],
     alias: {
       'vue': '@vue/runtime-dom'
     },
