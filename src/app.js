@@ -64,6 +64,37 @@ export default class {
       components: {
         timer: Timer,
         vuMeter: VUMeter
+      },
+      // Start recording when record button is pressed
+      recording() {
+        recorder.start();
+      },
+      done() {
+        recorder.stop();
+        recorder.getWavURL().then(blob => {
+          recorder.releaseMic();
+
+          media = {
+            data: blob,
+            name: 'audio-recorder.' + blob.type.split('/')[1]
+          };
+
+          viewModel.audioSrc = URL.createObjectURL(blob);
+
+          this.trigger('hasMedia', true);
+        }).catch(e => {
+          viewModel.state = State.CANT_CREATE_AUDIO_FILE;
+          console.error(H5PEditor.t('H5PEditor.AudioRecorder', 'statusCantCreateTheAudioFile'), e);
+        });
+      },
+      retry() {
+        recorder.releaseMic();
+        viewModel.audioSrc = AUDIO_SRC_NOT_SPECIFIED;
+        this.trigger('hasMedia', false);
+        media = undefined;
+      },
+      paused() {
+        recorder.stop();
       }
     });
 
@@ -89,41 +120,6 @@ export default class {
         viewModel.$emit('paused');
       }
     };
-
-    // Start recording when record button is pressed
-    viewModel.$on('recording', () => {
-      recorder.start();
-    });
-
-    viewModel.$on('done', () => {
-      recorder.stop();
-      recorder.getWavURL().then(blob => {
-        recorder.releaseMic();
-
-        media = {
-          data: blob,
-          name: 'audio-recorder.' + blob.type.split('/')[1]
-        };
-
-        viewModel.audioSrc = URL.createObjectURL(blob);
-
-        this.trigger('hasMedia', true);
-      }).catch(e => {
-        viewModel.state = State.CANT_CREATE_AUDIO_FILE;
-        console.error(H5PEditor.t('H5PEditor.AudioRecorder', 'statusCantCreateTheAudioFile'), e);
-      });
-    });
-
-    viewModel.$on('retry', () => {
-      recorder.releaseMic();
-      viewModel.audioSrc = AUDIO_SRC_NOT_SPECIFIED;
-      this.trigger('hasMedia', false);
-      media = undefined;
-    });
-
-    viewModel.$on('paused', () => {
-      recorder.stop();
-    });
 
     // Update UI when on recording events
     recorder.on('recording', () => {
@@ -171,7 +167,7 @@ export default class {
      */
     this.appendTo = function (container) {
       container.appendChild(rootElement);
-      viewModel.$mount(rootElement);
+      viewModel.mount(rootElement);
     };
   }
 }
