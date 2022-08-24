@@ -64,37 +64,42 @@ export default class {
       components: {
         timer: Timer,
         vuMeter: VUMeter
-      },
+      }
+    }, {
       // Start recording when record button is pressed
-      recording() {
+      onRecording() {
         recorder.start();
       },
-      done() {
+      onDone() {
         recorder.stop();
         recorder.getWavURL().then(blob => {
           recorder.releaseMic();
-
+  
           media = {
             data: blob,
             name: 'audio-recorder.' + blob.type.split('/')[1]
           };
-
+  
           viewModel.audioSrc = URL.createObjectURL(blob);
-
+  
           this.trigger('hasMedia', true);
         }).catch(e => {
           viewModel.state = State.CANT_CREATE_AUDIO_FILE;
           console.error(H5PEditor.t('H5PEditor.AudioRecorder', 'statusCantCreateTheAudioFile'), e);
         });
       },
-      retry() {
+      onRetry() {
         recorder.releaseMic();
         viewModel.audioSrc = AUDIO_SRC_NOT_SPECIFIED;
         this.trigger('hasMedia', false);
         media = undefined;
       },
-      paused() {
+      onPaused() {
         recorder.stop();
+      },
+      // resize iframe on state change
+      onResize() {
+        this.trigger('resize')
       }
     });
 
