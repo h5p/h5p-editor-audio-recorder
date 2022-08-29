@@ -121,13 +121,13 @@ export default class {
         if (vm.$refs.timer) {
           vm.$refs.timer.reset();
         }
-        viewModel.$emit('retry');
+        vm.$emit('retry');
       }
     };
     this.pause = function () {
       if (recorder.supported() && vm.$data.state === 'recording') {
         vm.$data.state = State.PAUSED;
-        viewModel.$emit('paused');
+        vm.$emit('paused');
       }
     };
 

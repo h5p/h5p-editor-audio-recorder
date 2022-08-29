@@ -99,9 +99,9 @@
         );
         dialog.appendTo(this.$el);
         dialog.show();
-        dialog.on('confirmed', () => {
+        dialog.on('confirmed', function() {
           this.state = State.READY;
-          if(this.$refs.timer) {
+          if (this.$refs.timer) {
             this.$refs.timer.reset();
           }
           this.$emit('retry');
@@ -117,7 +117,7 @@
 
     watch: {
       state: function(state){
-        if(refToFocusOnStateChange[state]) {
+        if (refToFocusOnStateChange[state]) {
           this.$nextTick(() => this.$refs[refToFocusOnStateChange[state]].focus());
         }
         this.$emit('resize');
