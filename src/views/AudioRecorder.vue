@@ -109,10 +109,10 @@
       }
     },
 
-    filters: {
-      unEscape: function(str) {
-        return str.replace(/&#039;/g, '\'');
-      },
+    computed: {
+      unEscape() {
+        return this.statusMessages[this.state].replace(/&#039;/g, '\'');
+      }
     },
 
     watch: {

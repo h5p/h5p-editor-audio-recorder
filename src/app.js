@@ -58,6 +58,9 @@ export default class {
       avgMicFrequency: 0
     });
 
+    // setting reference to current class
+    const that = this;
+
     // Create recording wrapper view
     const viewModel = createApp({
       ...AudioRecorderView,
@@ -80,18 +83,18 @@ export default class {
             name: 'audio-recorder.' + blob.type.split('/')[1]
           };
   
-          viewModel.audioSrc = URL.createObjectURL(blob);
+          vm.$data.audioSrc = URL.createObjectURL(blob);
   
-          this.trigger('hasMedia', true);
+          that.trigger('hasMedia', true);
         }).catch(e => {
-          viewModel.state = State.CANT_CREATE_AUDIO_FILE;
+          vm.$data.state = State.CANT_CREATE_AUDIO_FILE;
           console.error(H5PEditor.t('H5PEditor.AudioRecorder', 'statusCantCreateTheAudioFile'), e);
         });
       },
       onRetry() {
         recorder.releaseMic();
-        viewModel.audioSrc = AUDIO_SRC_NOT_SPECIFIED;
-        this.trigger('hasMedia', false);
+        vm.$data.audioSrc = AUDIO_SRC_NOT_SPECIFIED;
+        that.trigger('hasMedia', false);
         media = undefined;
       },
       onPaused() {
@@ -99,9 +102,11 @@ export default class {
       },
       // resize iframe on state change
       onResize() {
-        this.trigger('resize')
+        that.trigger('resize')
       }
     });
+
+    let vm;
 
     let media;
     this.getMedia = function () {
@@ -112,23 +117,23 @@ export default class {
     };
     this.reset = function () {
       if (recorder.supported()) {
-        viewModel.state = State.READY;
-        if (viewModel.$refs.timer) {
-          viewModel.$refs.timer.reset();
+        vm.$data.state = State.READY;
+        if (vm.$refs.timer) {
+          vm.$refs.timer.reset();
         }
         viewModel.$emit('retry');
       }
     };
     this.pause = function () {
-      if (recorder.supported() && viewModel.state === 'recording') {
-        viewModel.state = State.PAUSED;
+      if (recorder.supported() && vm.$data.state === 'recording') {
+        vm.$data.state = State.PAUSED;
         viewModel.$emit('paused');
       }
     };
 
     // Update UI when on recording events
     recorder.on('recording', () => {
-      viewModel.state = State.RECORDING;
+      vm.$data.state = State.RECORDING;
 
       // Start update loop for microphone frequency
       this.updateMicFrequency();
@@ -136,12 +141,12 @@ export default class {
 
     // Blocked probably means user has no mic, or has not allowed access to one
     recorder.on('blocked', () => {
-      viewModel.state = State.BLOCKED;
+      vm.$data.state = State.BLOCKED;
     });
 
     // May be sent from Chrome, which don't allow use of mic when using http (need https)
     recorder.on('insecure-not-allowed', () => {
-      viewModel.state = State.INSECURE_NOT_ALLOWED;
+      vm.$data.state = State.INSECURE_NOT_ALLOWED;
     });
 
     /**
@@ -149,13 +154,13 @@ export default class {
      */
     this.updateMicFrequency = function () {
       // Stop updating if no longer recording
-      if (viewModel.state !== State.RECORDING) {
+      if (vm.$data.state !== State.RECORDING) {
         window.cancelAnimationFrame(this.animateVUMeter);
         return;
       }
 
       // Grab average microphone frequency
-      viewModel.avgMicFrequency = recorder.getAverageMicFrequency();
+      vm.$data.avgMicFrequency = recorder.getAverageMicFrequency();
 
       // Throttle updating slightly
       setTimeout(() => {
@@ -172,7 +177,7 @@ export default class {
      */
     this.appendTo = function (container) {
       container.appendChild(rootElement);
-      viewModel.mount(rootElement);
+      vm = viewModel.mount(rootElement);
     };
   }
 }
