@@ -2,7 +2,7 @@
   <div class="h5p-audio-recorder-view">
     <vuMeter v-if="state !== 'done'" :avgMicFrequency="avgMicFrequency" :enablePulse="state === 'recording'"></vuMeter>
 
-    <div role="status" v-bind:class="state">{{statusMessages[state] | unEscape}}</div>
+    <div role="status" v-bind:class="state">{{ unEscape }}</div>
 
     <div class="h5p-audio-recorder-player" v-if="state === 'done' && audioSrc !== ''">
       <audio controls="controls">
@@ -89,6 +89,8 @@
       },
 
       retry: function() {
+        // References the current component
+        const that = this;
         const dialog = new H5P.ConfirmationDialog(
           {
             headerText: this.l10n.retryDialogHeaderText,
@@ -100,26 +102,27 @@
         dialog.appendTo(this.$el);
         dialog.show();
         dialog.on('confirmed', () => {
-          this.state = State.READY;
-          if(this.$refs.timer) {
-            this.$refs.timer.reset();
+          that.state = State.READY;
+          if (that.$refs.timer) {
+            that.$refs.timer.reset();
           }
-          this.$emit('retry');
+          that.$emit('retry');
         });
       }
     },
 
-    filters: {
-      unEscape: function(str) {
-        return str.replace(/&#039;/g, '\'');
-      },
+    computed: {
+      unEscape: function() {
+        return this.statusMessages[this.state].replace(/&#039;/g, '\'');
+      }
     },
 
     watch: {
-      state: function(state){
-        if(refToFocusOnStateChange[state]) {
+      state: function(state) {
+        if (refToFocusOnStateChange[state]) {
           this.$nextTick(() => this.$refs[refToFocusOnStateChange[state]].focus());
         }
+        this.$emit('resize');
       }
     }
   }
