@@ -1,5 +1,5 @@
 <template>
-  <div role="timer" class="audio-recorder-timer">{{secondsPassed | formatTime}}</div>
+  <div v-bind="$attrs" role="timer" class="audio-recorder-timer">{{secondsPassed | formatTime}}</div>
 </template>
 
 <script>
