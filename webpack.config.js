@@ -1,22 +1,31 @@
 const path = require('path');
 const webpack = require('webpack');
+const nodeEnv = process.env.NODE_ENV || 'development';
+const { VueLoaderPlugin } = require('vue-loader');
+const libraryName = process.env.npm_package_name;
 
 const config = {
-  entry: "./src/entries/dist.js",
-  devtool: 'inline-source-map',
+  mode: nodeEnv,
+  context: path.resolve(__dirname, 'src'),
+  entry: "./entries/dist.js",
+  devtool: (nodeEnv === 'production') ? undefined : 'inline-source-map',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: "h5p-editor-audio-recorder.js",
+    filename: `${libraryName}.js`,
     sourceMapFilename: '[file].map'
   },
   resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.vue'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue': '@vue/runtime-dom'
     },
     modules: [
       path.resolve('./src'),
       path.resolve('./node_modules')
-    ]
+    ],
+    fallback: {
+      util: require.resolve("util/")
+    }
   },
   module: {
     rules: [
@@ -25,32 +34,40 @@ const config = {
         loader: 'vue-loader',
         options: {
           preserveWhitespace: false,
-          loaders: {
-            scss: 'vue-style-loader!css-loader!sass-loader'
-          }
         },
       },
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: 'babel-loader'
       },
       {
-        test: /\.css$/,
-        loader: "css-loader"
+        test: /\.(s[ac]ss|css)$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       },
       {
         test: /\.(svg)$/,
         include: path.join(__dirname, 'src/images'),
-        loader: 'url-loader?limit=10000'
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000
+            }
+          }
+        ]
       } // inline base64 URLs for <=10k images, direct URLs for the rest
     ]
   },
-
   plugins: [
+    new VueLoaderPlugin(),
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-      }
+      'process.env': JSON.stringify(process.env),
+      'process.env.NODE_ENV': JSON.stringify(nodeEnv)
     }),
   ]
 };
