@@ -1,5 +1,5 @@
 <template>
-  <div v-bind="$attrs" role="timer" class="audio-recorder-timer">{{secondsPassed | formatTime}}</div>
+  <div v-bind="$attrs" role="timer" class="audio-recorder-timer">{{formatTime}}</div>
 </template>
 
 <script>
@@ -29,7 +29,7 @@
     computed: {
       formatTime() {
         const prependZero = num => (num < 10) ? `0${num}`: `${num}`;
-        const totalSeconds = parseInt(this.value, 10);
+        const totalSeconds = parseInt(this.secondsPassed, 10);
 
         let minutes = prependZero(Math.floor(totalSeconds / 60));
         let seconds = prependZero(totalSeconds - (minutes * 60));
