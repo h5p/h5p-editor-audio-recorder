@@ -1,0 +1,23 @@
+{
+  "libraryStrings": {
+    "recordAnswer": "تسجيل",
+    "continue": "متابعة",
+    "retry": "إعادة ضبط",
+    "microphoneInaccessible": "الميكروفون غير متاح. تأكد أن ميكروفون المتصفح مُفعَّل.",
+    "statusReadyToRecord": "اضغط الزر أدناه لبدء التسجيل.",
+    "statusPaused": "توقف التسجيل مؤقتًا.",
+    "downloadRecording": "اضغط الزر المُسمّى \"إدخال\" لاستخدام هذا التسجيل.",
+    "retryDialogBodyText": "بالضغط على إعادة المحاولة ستفقد تسجيلك الحالي.",
+    "retryDialogCancelText": "إلغاء",
+    "title": "المسجّل الصوتي",
+    "pause": "إيقاف مؤقت",
+    "done": "إنهاء",
+    "microphoneNotSupported": "الميكروفون غير مدعوم. تأكد أنك تستخدم متصفح يدعم التسجيل بالميكروفون.",
+    "insecureNotAllowed": "لا يُسمَح باستخدام الميكروفون في هذا المتصفح لأن هذه الصفحة لم يتم إنشاؤها باستخدام HTTPS. يُرجى التواصل مع المؤلف، وطلب بإتاحة الصفحة باستخدام HTTPS",
+    "statusRecording": "جاري التسجيل...",
+    "statusFinishedRecording": "استمع إلى التسجيل بالأسفل.",
+    "retryDialogHeaderText": "إعادة محاولة التسجيل؟",
+    "retryDialogConfirmText": "إعادة المحاولة",
+    "statusCantCreateTheAudioFile": "تعذر إنشاء الملف الصوتي."
+  }
+}
