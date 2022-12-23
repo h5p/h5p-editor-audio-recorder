@@ -1,0 +1,23 @@
+{
+  "libraryStrings": {
+    "recordAnswer": "Įrašyti",
+    "continue": "Tęsti",
+    "retry": "Nustatyti iš naujo",
+    "microphoneInaccessible": "Mikrofonas nepasiekiamas. Įsitikinkite, kad naršyklės mikrofonas įjungtas.",
+    "statusReadyToRecord": "Norėdami pradėti įrašymą, spragtelėkite žemiau esantį mygtuką.",
+    "statusPaused": "Įrašymas pristabdytas.",
+    "downloadRecording": "Norėdami naudoti šį įrašą, paspauskite mygtuką „Įterpti“.",
+    "retryDialogBodyText": "Paspaudę „Bandyti dar kartą“, prarasite dabartinį įrašą.",
+    "retryDialogCancelText": "Atšaukti",
+    "title": "Garso įrašytuvas",
+    "pause": "Pristabdyti",
+    "done": "Baigti",
+    "microphoneNotSupported": "Mikrofonas nepalaikomas. Įsitikinkite, kad naudojate naršyklę, leidžiančią įrašyti naudojant mikrofoną.",
+    "insecureNotAllowed": "Prieiga prie mikrofono neleidžiama jūsų naršyklėje, nes šis puslapis neteikiamas naudojant HTTPS. Susisiekite su autoriumi ir paprašykite, kad tai būtų pasiekiama naudojant HTTPS",
+    "statusRecording": "Įrašoma...",
+    "statusFinishedRecording": "Klausyti įrašo žemiau.",
+    "retryDialogHeaderText": "Bandyti įrašyti dar kartą?",
+    "retryDialogConfirmText": "Bandyti dar kartą",
+    "statusCantCreateTheAudioFile": "Nepavyko sukurti garso failo."
+  }
+}
