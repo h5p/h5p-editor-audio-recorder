@@ -1,0 +1,23 @@
+{
+  "libraryStrings": {
+    "title": "Enregistreur audio",
+    "recordAnswer": "Enregistrer",
+    "pause": "Pauser",
+    "continue": "Continuer",
+    "done": "Fini",
+    "retry": "Réinitialiser",
+    "microphoneNotSupported": "Microphone non compatible. Assurez-vous que vous utilisez un navigateur qui permet l'enregistrement au microphone.",
+    "microphoneInaccessible": "Le microphone n'est pas accessible. Assurez-vous que le microphone du navigateur est activé.",
+    "insecureNotAllowed": "L'accès au microphone n'est pas autorisé dans votre navigateur car cette page n'est pas servie en HTTPS. Veuillez contacter l'auteur pour qu'il permette l'accès à cette page via HTTPS",
+    "statusReadyToRecord": "Appuyer sur la touche ci-dessous pour commencer l'enregistrement.",
+    "statusRecording": "Enregistrement...",
+    "statusPaused": "Enregistrement en pause.",
+    "statusFinishedRecording": "Écouter l'enregistrement ci-dessous.",
+    "downloadRecording": "Appuyer sur la touche libellée « Insérer » pour utiliser cet enregistrement.",
+    "retryDialogHeaderText": "Réessayer l'enregistrement ?",
+    "retryDialogBodyText": "En appuyant sur « Réessayer », vous perdrez votre enregistrement en cours.",
+    "retryDialogConfirmText": "Réessayer",
+    "retryDialogCancelText": "Annuler",
+    "statusCantCreateTheAudioFile": "Impossible de créer le fichier audio."
+  }
+}
