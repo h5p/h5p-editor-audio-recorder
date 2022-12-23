@@ -1,0 +1,23 @@
+{
+  "libraryStrings": {
+    "title": "Gravador de áudio",
+    "recordAnswer": "Registo",
+    "pause": "Pausar",
+    "continue": "Continuar",
+    "done": "Finalizar",
+    "retry": "Redefinir",
+    "microphoneNotSupported": "Microfone não suportado.. Certifique-se de que está a utilizar um navegador que permite a gravação de microfones.",
+    "microphoneInaccessible": "O microfone não é acessível. Certifique-se de que o microfone do navegador está activado.",
+    "insecureNotAllowed": "O acesso ao microfone não é permitido no seu navegador uma vez que esta página não é servida com HTTPS. Por favor contacte o autor, e peça-lhe que o disponibilize utilizando HTTPS",
+    "statusReadyToRecord": "Prima o botão abaixo para iniciar a gravação.",
+    "statusRecording": "Gravação...",
+    "statusPaused": "A gravação fez uma pausa.",
+    "statusFinishedRecording": "Ouça a gravação abaixo.",
+    "downloadRecording": "Prima o botão com a etiqueta \"Insert\" para utilizar esta gravação.",
+    "retryDialogHeaderText": "Tenta novamente Gravação?",
+    "retryDialogBodyText": "Ao pressionar \"tentar novamente\" perderá a sua gravação actual.",
+    "retryDialogConfirmText": "Tentar novamente",
+    "retryDialogCancelText": "Cancelar",
+    "statusCantCreateTheAudioFile": "Não é possível criar o ficheiro áudio."
+  }
+}
