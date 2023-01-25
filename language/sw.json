@@ -1,0 +1,23 @@
+{
+  "libraryStrings": {
+    "title": "Kinasa Sauti",
+    "recordAnswer": "Rekodi",
+    "pause": "Sitisha",
+    "continue": "Endelea",
+    "done": "Maliza",
+    "retry": "Weka upya",
+    "microphoneNotSupported": "Kipaza sauti hakijaungwa mkono. Hakikisha unatumia kivinjari kinachoruhusu kurekodi kwa kipaza sauti.",
+    "microphoneInaccessible": "Kipaza sauti hakipatikani. Hakikisha kuwa kipaza sauti cha kivinjari kimewashwa.",
+    "insecureNotAllowed": "Ufikiaji wa kipaza sauti hauruhusiwi katika kivinjari chako kwa kuwa ukurasa huu hauhudumiwi kwa kutumia Itifaki ya uhamisho wa maandishi ya juu salama HTTPS. Tafadhali wasiliana na mwandishi, na muombe afanye hii ipatikane kwa kutumia Itifaki ya uhamisho wa maandishi ya juu salama HTTPS",
+    "statusReadyToRecord": "Bonyeza kitufe kilicho hapa chini ili uanze kurekodi.",
+    "statusRecording": "Inarekodii...",
+    "statusPaused": "Kurekodi kumesitishwa.",
+    "statusFinishedRecording": "Sikiliza rekodi hapa chini.",
+    "downloadRecording": "Bonyeza kitufe kilichoandikwa \"Ingiza\" ili kutumia rekodi hii.",
+    "retryDialogHeaderText": "Jaribu tena kurekodi?",
+    "retryDialogBodyText": "Kwa kubonyeza \"Jaribu tena\" utapoteza rekodi yako ya sasa.",
+    "retryDialogConfirmText": "Jaribu tena",
+    "retryDialogCancelText": "Ghairi",
+    "statusCantCreateTheAudioFile": "Haiwezi kuunda faili la sauti."
+  }
+}
