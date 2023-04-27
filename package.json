@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Record and upload audio directly in the H5P Editor",
   "scripts": {
-    "dev": "cross-env NODE_ENV='development' webpack",
-    "build": "cross-env NODE_ENV='production' webpack",
-    "watch": "webpack --watch"
+    "build": "webpack --mode=production",
+    "watch": "webpack --mode=development --watch"
   },
   "repository": {
     "type": "git",
@@ -20,16 +19,11 @@
     "@babel/plugin-transform-object-assign": "^7.18.6",
     "@babel/preset-env": "^7.18.10",
     "babel-loader": "^8.2.5",
-    "browser-env": "^3.3.0",
-    "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "mini-css-extract-plugin": "^2.6.1",
     "raw-loader": "^4.0.2",
-    "require-extension-hooks": "^0.3.3",
-    "require-extension-hooks-babel": "^1.0.0",
-    "require-extension-hooks-vue": "^3.0.0",
     "sass": "^1.56.1",
-    "sass-loader": "^13.0.2",
+    "sass-loader": "^13.1.0",
     "style-loader": "^3.3.1",
     "timer-machine": "^1.1.0",
     "url-loader": "^4.1.1",
@@ -42,10 +36,5 @@
   },
   "dependencies": {
     "vue": "^3.2.37"
-  },
-  "overrides": {
-    "node-sass": "^7.0.1",
-    "vue-template-compiler": "^2.7.10",
-    "webpack": "^5.74.0"
   }
 }
