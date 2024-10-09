@@ -2,7 +2,7 @@
   <div class="h5p-audio-recorder-view">
     <vuMeter v-if="state !== 'done'" :avgMicFrequency="avgMicFrequency" :enablePulse="state === 'recording'"></vuMeter>
 
-    <div role="status" v-bind:class="state">{{ unEscape }}</div>
+    <div role="status" v-if="state !== 'done'" v-bind:class="state">{{ unEscape }}</div>
 
     <div class="h5p-audio-recorder-player" v-if="state === 'done' && audioSrc !== ''">
       <audio controls="controls">
@@ -53,7 +53,7 @@
 
       <span class="button-row-right">
         <button class="button retry"
-                v-if="state === 'done' || state === 'cant-create-audio-file'"
+                v-if="state === 'cant-create-audio-file'"
                 v-on:click="retry">
           <span class="fa-undo"></span>
           <span class="small-screen-hidden">{{ l10n.retry }}</span>
