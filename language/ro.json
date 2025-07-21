@@ -1,0 +1,23 @@
+{
+  "libraryStrings": {
+    "title": "Înregistrator Audio",
+    "recordAnswer": "Înregistrează",
+    "pause": "Pauză",
+    "continue": "Continuă",
+    "done": "Finalizează",
+    "retry": "Reîncearcă",
+    "microphoneNotSupported": "Microfonul nu este suportat. Asigurați-vă că folosiți un browser care permite înregistrarea cu microfonul.",
+    "microphoneInaccessible": "Microfonul nu este accesibil. Asigurați-vă că microfonul este activat în setările browserului.",
+    "insecureNotAllowed": "Accesul la microfon nu este permis în browserul dumneavoastră, deoarece această pagină nu este servită prin HTTPS. Vă rugăm să contactați autorul și să îi solicitați să facă pagina disponibilă prin HTTPS.",
+    "statusReadyToRecord": "Apăsați butonul de mai jos pentru a începe înregistrarea.",
+    "statusRecording": "Se înregistrează...",
+    "statusPaused": "Înregistrare pusă pe pauză.",
+    "statusFinishedRecording": "Ascultați înregistrarea de mai jos.",
+    "downloadRecording": "Apăsați butonul etichetat „Inserează” pentru a folosi această înregistrare.",
+    "retryDialogHeaderText": "Reîncercați înregistrarea?",
+    "retryDialogBodyText": "Apăsând „Reîncearcă”, veți pierde înregistrarea curentă.",
+    "retryDialogConfirmText": "Reîncearcă",
+    "retryDialogCancelText": "Anulează",
+    "statusCantCreateTheAudioFile": "Fișierul audio nu a putut fi creat."
+  }
+}
