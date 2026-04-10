@@ -1,0 +1,23 @@
+{
+  "libraryStrings":{
+    "title":"Perekam Audio",
+    "recordAnswer":"Rekam",
+    "pause":"Jeda",
+    "continue":"Lanjutkan",
+    "done":"Selesai",
+    "retry":"Atur Ulang",
+    "microphoneNotSupported":"Mikrofon tidak didukung. Pastikan Anda menggunakan peramban yang mengizinkan perekaman mikrofon.",
+    "microphoneInaccessible":"Mikrofon tidak dapat diakses. Pastikan mikrofon peramban diaktifkan.",
+    "insecureNotAllowed":"Akses ke mikrofon tidak diizinkan di peramban Anda karena halaman ini tidak disajikan menggunakan HTTPS. Silakan hubungi penulis, dan minta dia untuk membuat ini tersedia menggunakan HTTPS",
+    "statusReadyToRecord":"Tekan tombol di bawah untuk memulai perekaman.",
+    "statusRecording":"Merekam...",
+    "statusPaused":"Perekaman dijeda.",
+    "statusFinishedRecording":"Dengarkan rekaman di bawah.",
+    "downloadRecording":"Tekan tombol berlabel \"Sisipkan\" untuk menggunakan rekaman ini.",
+    "retryDialogHeaderText":"Ulangi perekaman?",
+    "retryDialogBodyText":"Dengan menekan \"Ulangi\" Anda akan kehilangan rekaman saat ini.",
+    "retryDialogConfirmText":"Ulangi",
+    "retryDialogCancelText":"Batalkan",
+    "statusCantCreateTheAudioFile":"Tidak dapat membuat berkas audio."
+  }
+}
